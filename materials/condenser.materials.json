@@ -1,0 +1,41 @@
+{
+  "schema": "hvaclab-materials-1",
+  "component": "@hvaclab/condenser",
+  "synthetic": true,
+  "note": "Synthetic example data, not engineering data.",
+  "totalMassKg": 4.2,
+  "materials": [
+    {
+      "part": "Tubes",
+      "name": "Copper, inner-grooved",
+      "standardGrade": "EN 12735-2 Cu-DHP",
+      "densityKgPerM3": 8940,
+      "massFraction": 0.38,
+      "notes": "7 mm tubes, 2 rows"
+    },
+    {
+      "part": "Fins",
+      "name": "Aluminium, hydrophilic coated",
+      "standardGrade": "EN AW-8011 H22",
+      "densityKgPerM3": 2710,
+      "massFraction": 0.44,
+      "notes": "0.1 mm louvred fins"
+    },
+    {
+      "part": "End plates and brackets",
+      "name": "Steel, galvanised",
+      "standardGrade": "EN 10346 DX51D+Z",
+      "densityKgPerM3": 7850,
+      "massFraction": 0.15,
+      "notes": ""
+    },
+    {
+      "part": "Brazing alloy",
+      "name": "Phosphor copper",
+      "standardGrade": "ISO 17672 CuP 179",
+      "densityKgPerM3": 8100,
+      "massFraction": 0.03,
+      "notes": "Return bend joints"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC example behaviour for the OS20 HVAC lab. Not control software. -->
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" name="OutdoorCoil" initial="idle" datamodel="null">
+  <state id="idle">
+    <transition event="mode.cooling" target="rejectingHeat"/>
+    <transition event="mode.heating" target="absorbingHeat"/>
+  </state>
+  <state id="rejectingHeat">
+    <!-- acts as condenser in cooling mode -->
+    <transition event="mode.off" target="idle"/>
+    <transition event="mode.heating" target="absorbingHeat"/>
+  </state>
+  <state id="absorbingHeat">
+    <!-- acts as evaporator in heat-pump mode -->
+    <transition event="mode.off" target="idle"/>
+    <transition event="frost.detected" target="frosted"/>
+    <transition event="mode.cooling" target="rejectingHeat"/>
+  </state>
+  <state id="frosted">
+    <transition event="defrost.start" target="defrosting"/>
+    <transition event="mode.off" target="idle"/>
+  </state>
+  <state id="defrosting">
+    <transition event="defrost.complete" target="absorbingHeat"/>
+    <transition event="mode.off" target="idle"/>
+  </state>
+</scxml>
